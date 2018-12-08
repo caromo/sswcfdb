@@ -1,0 +1,33 @@
+<section class="phx-hero">
+  <h1>Hi!</h1>
+  <p>Index page for the Southern Sierra<br/> Wildflower Club(SSWC) Flower Database</p>
+</section>
+
+<section class="row">
+  <article class="column">
+    <h2>L1</h2>
+    <ul>
+      <li>
+      stuff
+      </li>
+      <li>
+      stuff
+      </li>
+      <li>
+      stuff
+      </li>
+    </ul>
+  </article>
+  <article class="column">
+    <h2>L2</h2>
+    <ul>
+      <li>
+      stuff
+      </li>
+      <li>stuff
+      </li>
+      <li>stuff
+      </li>
+    </ul>
+  </article>
+</section>
