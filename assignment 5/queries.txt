@@ -1,0 +1,20 @@
+SELECT * FROM SIGHTINGS 
+WHERE NAME = 'Canyon dudleya' --user input
+ORDER BY SIGHTED 
+DESC LIMIT 10;
+
+-------------------------------------------------------------------------------------------------------
+
+UPDATE FLOWERS
+SET GENUS = 'complicated', --user input
+	SPECIES = 'flowerName' --user input
+WHERE COMNAME = 'Death camas'; --flower selected
+SELECT * FROM FLOWERS 
+WHERE COMNAME = 'Death camas'; --flower selected
+
+-------------------------------------------------------------------------------------------------------
+
+INSERT INTO SIGHTINGS
+VALUES ('newName', 'newPerson', 'newLocation', 'newSighted'); -- user input
+SELECT * FROM SIGHTINGS;
+
