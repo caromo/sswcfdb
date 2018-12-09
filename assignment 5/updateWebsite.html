@@ -33,25 +33,32 @@
 				margin-right: 600px;
 				margin-top: 40px;
 				padding: 30px;
-			}
+			}	
 		</style>
 	</head>
 	
 	<body background="sunflower.jpg">
 		<div>
 			<form id="form"><!--action="/where to put the data"-->
-				<h2 id="action">Insert Mode</h2>
-				Flower Name:<br>
-				<input type="text" name="flowerName" placeholder="Ex: Sunflower..">
+				<h2 id="action">Update Mode</h2>
+				Which flower to update?<br>
+					<select name="flowers">
+						<option value="flower1">flower1</option>
+						<option value="flower2">flower2</option>
+						<option value="flower3">flower3</option>
+						<option value="flower4">flower4</option>
+						<option value="flower5">flower5</option>
+						<option value="flower6">flower6</option>
+					</select>
 				<br>
-				Person:<br>
-				<input type="text" name="person" placeholder="Ex: Alin Dobra..">
+				Genus Name:<br>
+				<input type="text" name="genus" placeholder="Ex: Hocus">
 				<br>
-				Location:<br>
-				<input type="text" name="location" placeholder="Ex: Weimer 1064">
+				Species Name:<br>
+				<input type="text" name="species" placeholder="Ex: Pocus">
 				<br>
-				Sighted:<br>
-				<input type="text" name="sighted" placeholder="Ex: 2018-04-04">
+				Common Name:<br>
+				<input type="text" name="comname" placeholder="Ex: Magical">
 				<br><br>
 				<input type="submit">
 				<input type="reset">
