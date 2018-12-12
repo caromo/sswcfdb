@@ -3,40 +3,55 @@
 	<head >
 		<title>Assignment 5 for CIS4301</title>
 		<meta charset="UTF-8">
-		<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
-		<h1 id="question">Southern Sierra Wildflower Club Ultimate Database</h1>
-		<h2 id="title">What would you like to do?</h2>
+		<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+		<h1 id="title";>Southern Sierra Wildflower Club Ultimate Database</h1>
+		<h2 id="question">What would you like to do?</h2>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<style>
 			th {
 				text-align: center;
 			}
-			#title{
-				background-color: #ECF52B;
-				padding: 20px;
-				margin: 10px;
-				font-family: Dosis; 
-				text-align: center;
-			}
 			#question{
-				background-color: orange;
-				padding: 20px;
 				margin: 10px;
-				font-family: Dosis; 
+				font-family: Indie Flower; 
+				font-size: 30px;
 				text-align: center;
 			}
-			table{
-				width: 100%;
-				font-family: Dosis;
-				background-color: #87F52B;
+			#title{
 				padding: 20px;
-				margin:10px;
+				margin: 10px;
+				font-family: Indie Flower; 
+				text-align: center;
+				font-size: 50px;
+				
+			}
+			#options{
+				
+				width: 100%;
+				font-family: Indie Flower;				
+				font-size: 25px;
+				margin: 40px auto;
+			}
+			body{
+				cursor:url('flower.ani'), auto; <!--cursor will change only in IE-->
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+			#contact{
+				position: absolute; 
+				bottom: 0;
+				right: 0;
+				background-color: rgba(255, 255, 255, 0.5);
+				font-family: Indie Flower;
+				font-size: 20px;
 			}
 		</style>
 	</head>
 	
-	<body background="tulip.jpg">
-			<table>
+	<body background="bkgd.jpg">
+			
+			<table id="options">
 				<th style="width:33%">
 					<a href="recentWebsite.html">Recent Sightings</a>
 				</th>
@@ -46,6 +61,13 @@
 				<th style="width:33%">
 					<a href="insertWebsite.html">Insert</a>
 				</th>
-			</table>		
+			</table>	
+			<table id="contact">
+				<tr>
+					<th>Questions? Contact: </th>
+					<th>John Doe</th>
+					<th>ph:(333)444-5555</th>
+					<th>john.doe.ufl.edu</th>
+				</tr>
 	</body>
 </html>
