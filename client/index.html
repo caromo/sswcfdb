@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/main.css">
 
-    <style>
-      .vertical-center {
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+
+  <style>
+    .vertical-center {
         min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
         min-height: 100vh; /* These two lines are counted as one :-)       */
 
@@ -22,110 +23,140 @@
         transform: translateX(-50%) translateY(-50%);
       }
     </style>
-  </head>
-  <body ng-app="directoryApp" style="background-image: url('./bg.jpg'); background-size:cover;">
-    <div class="container">
-      <div class="">
-        <h1 style="text-align: justify;
+</head>
+
+<body ng-app="directoryApp" style="background-image: url('./bg.jpg'); background-size:cover; background-position: top; background-repeat: no-repeat">
+  <div class="container">
+    <div class="">
+      <h1 style="text-align: justify;
         -moz-text-align-last: center;
-        text-align-last: center;">SSWC Flower Database</h1>
-      </div>
-      <div class="" ng-controller="ListingsController">
-        <div class="">
-            <div class="panel-group" id="accordion" style="opacity:.8;">
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-                      View Flowers</a>
-                    </h4>
-                  </div>
-                  <div id="collapse1" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <div class="tableWrapper">
-                            <table class="table table-bordered table-striped table-hover" >
-                              <tr>
-                                <th>Scientific Name</th>
-                                <th>Common Name</th>
-                              </tr>
-                              <tr ng-repeat="listing in listings" ng-click="select(listing)">
-                                <td>{{listing.sciname}}</td>
-                                <td>{{listing.comname}}</td>
-                              </tr>
-                            </table>
-                            
-                          </div>
+        text-align-last: center;">SSWC
+        Flower Database</h1>
+    </div>
+    <div class="" ng-controller="ListingsController">
+      <div class="">
+        <div class="panel-group" id="accordion" style="opacity:.8;">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                  View Flowers</a>
+              </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse">
+              <div class="panel-body">
+                  <div class="alert alert-info">
+                      <strong>Read me!</strong> Click on any flower to select it, then go to the other modules to update its information or look at sightings.
                     </div>
-                  </div>
+                <div class="tableWrapper">
+                  <table class="table table-bordered table-striped table-hover">
+                    <tr>
+                      <th>Scientific Name</th>
+                      <th>Common Name</th>
+                    </tr>
+                    <tr ng-repeat="listing in listings" ng-click="select(listing)">
+                      <td>{{listing.sciname}}</td>
+                      <td>{{listing.comname}}</td>
+                    </tr>
+                  </table>
+
                 </div>
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-                      View or Add Sightings</a>
-                    </h4>
-                  </div>
-                  <div id="collapse2" class="panel-collapse collapse">
-                    <div class="panel-body">
-                      <div class="panel-heading">Showing the 10 most recent entries for {{currname}}</div>
-                      <div class="tableWrapper">
-                        <table class="table table-bordered table-striped table-hover">
-                          <tr>
-                            <th>Person Sighted</th>
-                            <th>Location</th>
-                            <th>Date Sighted</th>
-                            <th></th>
-                          </tr>
-                          <tr ng-repeat="sighting in sightings">
-                            <td>{{sighting.person}}</td>
-                            <td>{{sighting.location}}</td>
-                            <td>{{sighting.sighted}}</td>
-                            <td><span class="glyphicon glyphicon-remove" ng-click="remove(sighting)"></span></td>
-                          </tr>
-                        </table>
-                        <form novalidate class="simple-form">
-                          <div class="form-group">
-                            <h2>Add a Sighting</h2>
-                            <label>Name:</label> <input type="text" class="form-control" ng-model="newSighting.name"/><br/>
-                            <label>Location:</label> <input type="text" class="form-control" ng-model="newSighting.location"/><br/>
-                            <button class="btn btn-primary" ng-click="add(newSighting)">Add Listing</button>
-                          </div>
-                        </form>
-                      </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                  View or Add Sightings</a>
+              </h4>
+            </div>
+            <div id="collapse2" class="panel-collapse collapse">
+              <div class="panel-body">
+                <div class="panel-heading">Showing the 10 most recent entries for {{currname}}</div>
+                <div class="tableWrapper">
+                  <table class="table table-bordered table-striped table-hover">
+                    <tr>
+                      <th>Person Sighted</th>
+                      <th>Location</th>
+                      <th>Date Sighted</th>
+                      <th></th>
+                    </tr>
+                    <tr ng-repeat="sighting in sightings">
+                      <td>{{sighting.person}}</td>
+                      <td>{{sighting.location}}</td>
+                      <td>{{sighting.sighted}}</td>
+                      <td><span class="glyphicon glyphicon-remove" ng-click="remove(sighting)"></span></td>
+                    </tr>
+                  </table>
+                  <form novalidate class="simple-form">
+                    <div class="form-group">
+                      <h2>Add a Sighting</h2>
+                      <label>Name:</label> <input type="text" class="form-control" ng-model="newSighting.name" /><br />
+                      <label>Location:</label> <input type="text" class="form-control" ng-model="newSighting.location" /><br />
+                      <button class="btn btn-primary" ng-click="add(newSighting)">Update</button>
                     </div>
-                  </div>
+                  </form>
                 </div>
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-                      Update Existing Flower</a>
-                    </h4>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                  Update Existing Flower</a>
+              </h4>
+            </div>
+            <div id="collapse3" class="panel-collapse collapse">
+              <div class="panel-body">
+                <form novalidate class="simple-form">
+                  <div class="form-group">
+                    <h2>Update Existing Flower</h2>
+                    <label for="genus">Genus:</label> <input type="text" class="form-control" ng-model="updatedFlower.genus" /><br />
+                    <label for="species">Species:</label> <input type="text" class="form-control" ng-model="updatedFlower.species" /><br />
+                    <label for="comname">Common Name: </label> <input type="text" class="form-control" ng-model="updatedFlower.comname" /><br />
+                    <button class="btn btn-primary" ng-click="update(updatedFlower)">Add Listing</button>
                   </div>
-                  <div id="collapse3" class="panel-collapse collapse">
-                    <div class="panel-body">
-                      <form novalidate class="simple-form">
-                        <div class="form-group">
-                          <h2>Update Existing Flower</h2>
-                          <label for="genus">Genus:</label> <input type="text" class="form-control" ng-model="updatedFlower.genus" /><br />
-                          <label for="species">Species:</label> <input type="text" class="form-control" ng-model="updatedFlower.species" /><br />
-                          <label for="comname">Common Name: </label> <input type="text" class="form-control" ng-model="updatedFlower.comname" /><br />
-                          <button class="btn btn-primary" ng-click="update(updatedFlower)">Add Listing</button>
-                        </div>
-                      </form>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                  Advanced: Custom SQL Query</a>
+              </h4>
+            </div>
+            <div id="collapse4" class="panel-collapse collapse">
+              <div class="panel-body">
+                <form novalidate class="simple-form">
+                  <div class="form-group">
+                    <h2>Run your own SQLite Query</h2>
+                    <div class="alert alert-danger">
+                      <strong>Warning!</strong> Only use this if you know what you are doing. Club data can be lost
+                      using this option! SELECT statements will show up in the console.
                     </div>
+                    <label for="query">Query:</label> <input type="text" class="form-control" ng-model="CustomQuery.query" /><br />
+                    <button class="btn btn-primary" ng-click="runq(CustomQuery)">Run & Update</button>
                   </div>
-                </div>
-              </div> 
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-    <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/factories/listingFactory.js"></script>
-    <script src="js/controllers/listingController.js"></script>
-  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
+    crossorigin="anonymous"></script>
+  <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/factories/listingFactory.js"></script>
+  <script src="js/controllers/listingController.js"></script>
+</body>
+
 </html>

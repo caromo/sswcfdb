@@ -16,8 +16,11 @@ angular.module('listings', []).factory('Listings', function ($http) {
     },
 
     delete: function (fname, name, loc) {
-
       return $http.delete(`http://localhost:3000/api/sightings/${fname}/${name}/${loc}`);
+    },
+
+    query: function (q) {
+      return $http.get(`http://localhost:3000/api/custom/${q}`);
     }
   };
 

@@ -2,7 +2,6 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
   function($scope, Listings) {
     Listings.getAll().then(function(response) {
       $scope.listings = response.data;
-      console.log(response.data);
       console.log('Listings acquired');
     }, function(error) {
       console.log('Unable to retrieve listings:', error);
@@ -64,6 +63,21 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
       
     }
 
+    $scope.runq = function(CustomQuery) {
+      Listings.query(CustomQuery.query).then(function(res) {
+        console.log('Query successful!');
+        console.log(res.data);
+        Listings.getAll().then(function(res) {
+          $scope.listings = res.data;
+        }, function(err) {
+          console.log("Error finding flowers.", err);
+        });
+        $scope.listings = res.data;
+      }, function(err) {
+        console.log('Query failed.', err);
+      })
+    }
+
     $scope.add = function(nSight) {
       Listings.addSight($scope.currentFlower.comname, nSight.name, nSight.location).then(function(res) {
         console.log('Successfully added sighting!');
@@ -78,5 +92,9 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
         console.log('Unable to add sighting', err);
       });
     }
+    
+
   }
+
+
 ]);

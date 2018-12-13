@@ -8,7 +8,7 @@ router.put('/flowers/:ngen/:nspe/:ncom/:ogen/:ospe', listings.update);
 
 router.post('/sightings/:fname/:name/:loc', listings.add);
 router.delete('/sightings/:fname/:name/:loc', listings.remove);
-
+router.get('/custom/:query', listings.custom);
 
 router.route('/flowers')
   .get(listings.flowers);
