@@ -4,6 +4,5 @@ A user interface for the SSWC Flower Database.
 
 To run:
 
-  * Install dependencies with `mix deps.get`
-  * Install Node.js dependencies with `cd assets && npm install`
-  * Start Phoenix endpoint with `mix phx.server`
+  * Install Node.js dependencies with `npm install`
+  * Start Phoenix endpoint with `node server.js`

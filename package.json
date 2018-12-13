@@ -1,0 +1,25 @@
+{
+  "name": "sswcfdb",
+  "version": "1.0.0",
+  "description": "Assignment 5 for Database Implementation",
+  "main": "server.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "cors": "^2.8.4",
+    "express": "^4.13.3",
+    "mongoose": "^4.2.9",
+    "morgan": "^1.6.1",
+    "request": "^2.67.0",
+    "sequelize": "^4.41.2",
+    "sqlite3": "^4.0.4"
+  },
+  "devDependencies": {
+    "should": "^7.1.1",
+    "supertest": "^1.1.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}
