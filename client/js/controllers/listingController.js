@@ -52,7 +52,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
         console.log(`Successfully deleted ${toRem.name}'s sighting!`);
         Listings.getSpecSighting(encodeURIComponent($scope.currentFlower.comname)).then(function(res) {
           $scope.sightings = res.data;
-          console.log(`Found sightings for ${flower.comname}!`);
+          console.log(`Found sightings for ${currentFlower.comname}!`);
           console.log(res.data);
         }, function(error) {
           console.log('Unable to find sightings', error);
@@ -83,7 +83,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
         console.log('Successfully added sighting!');
         Listings.getSpecSighting(encodeURIComponent($scope.currentFlower.comname)).then(function(res) {
           $scope.sightings = res.data;
-          console.log(`Found sightings for ${flower.comname}!`);
+          console.log(`Found sightings for ${currentFlower.comname}!`);
           console.log(res.data);
         }, function(error) {
           console.log('Unable to find sightings', error);
